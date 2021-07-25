@@ -1,0 +1,49 @@
+{% extends 'layout.html'%}
+
+{% block title %} home {% endblock %}
+
+
+{% block main %}
+
+    <!-- alert -->
+  <div class="alert alert-primary" role="alert">
+    An ultimate tool use to remove puncuation, blank space etc
+  </div>
+
+  <!-- form  -->
+  <form action="\analyze" method="GET"> 
+    <p>Enter your desired text.</p>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1"></label>
+      <textarea class="form-control-fluid" name = 'text' id="exampleFormControlTextarea1" rows="14" cols="100"></textarea>
+    </div>
+    <div class="switch">
+        
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name = "capitalize">
+            <label class="form-check-label"  for="flexSwitchCheckDefault">Capitalize</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name = "uppercase" >
+            <label class="form-check-label"  for="flexSwitchCheckChecked">Uppercase</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name = "lowercase">
+            <label class="form-check-label"  for="flexSwitchCheckDisabled">Lowercase</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name = "punctuations" type="checkbox" id="flexSwitchCheckCheckedDisabled" >
+            <label class="form-check-label" for="flexSwitchCheckCheckedDisabled" >Remove Punctuations</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name = "blankspaces">
+            <label class="form-check-label" for="flexSwitchCheckCheckedDisabled" >Remove blankspaces</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name = "newline">
+            <label class="form-check-label" for="flexSwitchCheckCheckedDisabled" >Remove newline</label>
+        </div>
+    </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
