@@ -11,7 +11,8 @@
   </div>
 
   <!-- form  -->
-  <form action="\analyze" method="GET"> 
+  <form action="\analyze" method="POST"> 
+    {% csrf_token %}
     <p>Enter your desired text.</p>
     <div class="form-group">
       <label for="exampleFormControlTextarea1"></label>
@@ -46,4 +47,5 @@
     </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
 {% endblock %}

@@ -8,13 +8,13 @@ def index(request):
 def analyze(request):
     # getting input from form
 
-    text = request.GET.get('text','default')
-    capitalize = request.GET.get('capitalize','off')
-    uppercase = request.GET.get('uppercase','off')
-    lowercase = request.GET.get('lowercase','off')
-    punctuations = request.GET.get('punctuations','off')
-    blankspace = request.GET.get("blankspaces",'off')
-    newline = request.GET.get('newline','off')
+    text = request.POST.get('text','default')
+    capitalize = request.POST.get('capitalize','off')
+    uppercase = request.POST.get('uppercase','off')
+    lowercase = request.POST.get('lowercase','off')
+    punctuations = request.POST.get('punctuations','off')
+    blankspace = request.POST.get("blankspaces",'off')
+    newline = request.POST.get('newline','off')
 
     # initializing variables
     check = False
@@ -62,6 +62,7 @@ def analyze(request):
         check = True
         analyzed.rstrip("\n")
 
+    params = {"analyzed_text":analyzed}
     if not check:
         params = {"analyzed_text":"*You haven't selected any option*"}
 
